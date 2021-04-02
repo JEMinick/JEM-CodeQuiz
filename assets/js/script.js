@@ -246,10 +246,12 @@ function quizCompleted()
       mainForm.appendChild( createP2 );
   }
 
+  timeEl.textContent = "You Finished!";
+
   // Label prefix to User Input:
   var sUserPrompt = document.createElement( "label" );
   sUserPrompt.setAttribute( "id", "sUserPrompt" );
-  sUserPrompt.textContent = "Enter your initials: ";
+  sUserPrompt.textContent = "Enter your initials or name: ";
   mainForm.appendChild( sUserPrompt );
   
   // User Input:
