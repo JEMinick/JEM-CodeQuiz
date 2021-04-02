@@ -4,6 +4,8 @@ This app is a timed coding quiz with multiple-choice questions that relate to Ja
 
 ## The active link to my Code Quiz app:
 [Ed's Code Quiz](https://jeminick.github.io/JEM-CodeQuiz/)
+### My gitHubs for this project:
+[Code Quiz GitHub](https://github.com/JEMinick/JEM-CodeQuiz)
 
 ## Installation
 
@@ -21,6 +23,9 @@ This app is initiated by the root html file "index.html.:  To begin the quiz, si
 ![Screen shot:](./assets/images/CodeQuizApp.png?raw=true)
 
 At the conclusion of the quiz, you will be prompted to enter your initials/name to save for the "High Scores" board.  The High Scores board will be presented thereafter.
+
+## About me:
+[Portfolio](https://jeminick.github.io/JEM-Portfolio/)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
