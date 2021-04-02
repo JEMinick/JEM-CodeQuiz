@@ -4,7 +4,7 @@ This app is a timed coding quiz with multiple-choice questions that relate to Ja
 
 ## The active link to my Code Quiz app:
 [Ed's Code Quiz](https://jeminick.github.io/JEM-CodeQuiz/)
-### My gitHubs for this project:
+### My gitHub for this project:
 [Code Quiz GitHub](https://github.com/JEMinick/JEM-CodeQuiz)
 
 ## Installation
