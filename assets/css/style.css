@@ -1,0 +1,174 @@
+
+:root {
+  --white: #fff;
+  --primary-form-bkgnd: rgb(128, 160, 160);
+  --primary-form-border: rgb(44, 109, 109);
+  --primary-hdrftr-clr: cyan;
+  --primary-bkgnd: cyan;
+  --primary-font-clr: rgb(8, 8, 59);
+  --content-bkgnd: rgb(209, 209, 226);
+  /* You can use it with any value that is repeated throughout the sheet */
+  --border-radius: 30px;
+  --background-form: rgb(204, 204, 223);
+  --fullsize-font: 48px;
+  --mediumsize-font: 36px;
+  --smallsize-font: 24px;
+
+  --linearEdge: rgb(48, 73, 97);
+}
+
+* {
+  margin: 2px 4px;
+  color: white;
+  background-color: var(--primary-form-bkgnd); /* black; */
+  border: 1px solid var(--linearEdge); /* yellow; --primary-form-border */
+}
+
+body {
+  background-color: rgb(14, 61, 61);
+  /* min-width: 280px; */
+}
+
+#main-form {
+  background-color: var(--background-form);
+  margin: 0 15px;
+}
+
+p {
+  color: black;
+  background-color: var(--background-form);
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+li {
+  width: 200px;
+  color: white;
+  background-color: blue;
+  border-radius: 8px;
+  margin-left: 10px;
+  padding: 5px 10px;
+}
+
+h1 {
+  text-align: center;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: var(--fullsize-font);
+  /* margin-bottom: 20px; */
+  margin: 0 0 20px 0;
+  color: var(--primary-font-clr);
+  background: linear-gradient(0deg, rgb(68, 96, 122) 0%, rgba(237,245,249,1) 63%);
+}
+
+footer {
+  color: var(--primary-font-clr);
+  background: linear-gradient(0deg, rgba(19,41,61,1) 0%, rgba(237,245,249,1) 63%);
+  text-align: center;
+  font-family: fantasy;
+  font-size: var(--smallsize-font);
+  margin: 20px 0 0 0;
+}
+
+.start-button {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-form-bkgnd);
+  border-color: blueviolet;
+}
+
+#startButtonID {
+  margin: 10px;
+  padding: 30px;
+  border-radius: 100%;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: var(--fullsize-font);
+  color: var(--primary-font-clr);
+  /* background-color: var(--background-form); */
+  background: linear-gradient(0deg, rgb(68, 96, 122) 0%, rgba(237,245,249,1) 63%);
+  border-color: rgb(27, 8, 44);
+  border-width: 2px;
+}
+
+#submitBtn {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8%;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: var(--smallsize-font);
+  color: var(--primary-font-clr);
+  /* background-color: var(--background-form); */
+  background: linear-gradient(0deg, rgb(68, 96, 122) 0%, rgba(237,245,249,1) 63%);
+  border-color: rgb(27, 8, 44);
+  border-width: 2px;
+}
+
+/* ---------------------- H I G H   S C O R E S ---------------------- */
+th {
+  background-color: rgb(164, 164, 199);
+  /* width:20%; */
+}
+.highScoresTable {
+  background-color: var(--primary-form-border);
+  text-align: center;
+  border: 1px solid #0000FF;
+  width: 100%;
+  margin: 2px auto;
+}
+td {
+  margin: 5px 2px;
+  text-align: center;
+  width: 30%;
+}
+#highScoreScreenButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/* ------------------------------------------------------------------- */
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: var(--mediumsize-font);
+    /* margin-bottom: 10px; */
+  }
+  #startButtonID {
+    font-size: var(--mediumsize-font);
+  }
+  footer {
+    font-size: 18px;
+    /* margin-bottom: 5px; */
+  }
+  li {
+    width: 140px;
+    color: white;
+    padding: 8px;
+    margin: 10px 4px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    margin: 0 0;
+    min-width: 300px;
+  }
+  h1 {
+    font-size: var(--mediumsize-font);
+    /* margin-bottom: 5px; */
+  }
+  #startButtonID {
+    font-size: var(--smallsize-font);
+  }
+  li {
+    width: 80px;
+    color: white;
+    padding: 5px;
+    margin: 10px 4px;
+  }
+}
+
