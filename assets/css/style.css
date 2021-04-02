@@ -42,11 +42,12 @@ p {
 }
 
 li {
-  width: 200px;
+  width: auto; /* 200px; */
   color: white;
   background-color: blue;
   border-radius: 8px;
   margin-left: 10px;
+  margin-right: 20px;
   padding: 5px 10px;
 }
 
@@ -145,7 +146,7 @@ td {
     /* margin-bottom: 5px; */
   }
   li {
-    width: 140px;
+    /* width: 140px; */
     color: white;
     padding: 8px;
     margin: 10px 4px;
@@ -165,7 +166,7 @@ td {
     font-size: var(--smallsize-font);
   }
   li {
-    width: 80px;
+    /* width: 80px; */
     color: white;
     padding: 5px;
     margin: 10px 4px;
