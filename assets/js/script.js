@@ -274,7 +274,7 @@ function getRandomInt(max) {
     nRandomValue = Math.random( max );
     iRandomFloorValue = Math.floor( nRandomValue * Math.floor(max) );
   }
-  console.log( "Random number generated is [", nRandomValue, "] with a floor(" + max + ") generated of: [", iRandomFloorValue, "]" );
+  console.log( "Random number generated: [", nRandomValue, "] : Using max(" + max + ") and generated RandomInt: [", iRandomFloorValue, "]" );
   return( iRandomFloorValue );
 }
 
@@ -514,8 +514,8 @@ function quizCompleted()
       
       if ( sInitials === null || sInitials.length == 0 )
       {
-        console.log( "No value entered!" );
-        quizStatusLine.textContent = "Enter your initials for the High Score board!";
+        console.log( "No initals/name entered for the Score Board!" );
+        quizStatusLine.textContent = "Enter your initials for the Score Board!";
       } 
       else
       {
@@ -563,10 +563,10 @@ function quizCompleted()
           var recHighScores3 = localStorage.getItem( "HighScores" );
           
           recHighScores3 = JSON.parse( recHighScores3 );
+          iTotalScores = recHighScores3.length;
           if ( bDebugging ) {
             if ( recHighScores3 !== null )
             {
-              iTotalScores = recHighScores3.length;
               console.log( "The HighScore list now contains [" + recHighScores3.length + "] entries." );
             }
           }
