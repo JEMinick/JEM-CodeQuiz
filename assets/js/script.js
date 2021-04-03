@@ -321,7 +321,7 @@ function createRandomizedQuestionList(aQuestions2Shuffle)
 // In order to make the quiz a little more interesting,
 // shuffle the list of questions so they're not so
 // predictable when re-started:
-var aQuestions = createRandomizedQuestionList(a5Questions);
+var aQuestions = createRandomizedQuestionList(a25Questions);
 if ( bDebugging )
 {
   console.log( "The new shuffled question list is as follows:" );
