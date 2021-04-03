@@ -321,7 +321,7 @@ function createRandomizedQuestionList(aQuestions2Shuffle)
 // In order to make the quiz a little more interesting,
 // shuffle the list of questions so they're not so
 // predictable when re-started:
-var aQuestions = createRandomizedQuestionList(a25Questions);
+var aQuestions = createRandomizedQuestionList(a5Questions);
 if ( bDebugging )
 {
   console.log( "The new shuffled question list is as follows:" );
@@ -559,11 +559,15 @@ function quizCompleted()
         // ==========================================================================================================================
         function displayHighScores()
         {
+          console.log( "creating the High Scores screen." );
+
           var iTotalScores = 0;
           var recHighScores3 = localStorage.getItem( "HighScores" );
           
           recHighScores3 = JSON.parse( recHighScores3 );
-          iTotalScores = recHighScores3.length;
+          if ( recHighScores3 !== null )
+            iTotalScores = recHighScores3.length;
+          
           if ( bDebugging ) {
             if ( recHighScores3 !== null )
             {
@@ -687,6 +691,8 @@ function quizCompleted()
         // -------------------------------------------------------------
         function createFinalScreenButtons()
         {
+          console.log( "creating buttons for the High Scores screen." );
+          
           var oBtn1Div = document.createElement( "div" );
           oBtn1Div.setAttribute( "id", "highScoreScreenButtons" );
           oBtn1Div.setAttribute( "style", "flex: auto " );
