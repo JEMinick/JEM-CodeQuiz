@@ -84,7 +84,7 @@ var a25Questions = [
     sQuestion: "What is the correct syntax for referring to an external script called \"xxx.js\"?",
     sQExample: "",
     aChoices: ["<script href=\"xxx.js\">","<script name=\"xxx.js\">","<script src=\"xxx.js\">"],
-    sAnswer: "<script src=\"xxx.js\""
+    sAnswer: "<script src=\"xxx.js\">"
   },
   {
     sQuestion: "The external JavaScript file must contain the <script> tag.",
@@ -280,9 +280,9 @@ function getRandomInt(max) {
 
 // =====================================================================================================
 
-function createRandomizedQuestionList(aQuestions)
+function createRandomizedQuestionList(aQuestions2Shuffle)
 {
-  var iTotalQuestions = aQuestions.length;
+  var iTotalQuestions = aQuestions2Shuffle.length;
   var aNewQuestions = [];
   
   var abQuestions = [];
@@ -305,9 +305,9 @@ function createRandomizedQuestionList(aQuestions)
           {
             // log & copy the question...
             iQIndex = j;
-            console.log( "Question#" + i + ": \"" + aQuestions[iQIndex].sQuestion + "\"" );
+            console.log( "Question#" + i + ": \"" + aQuestions2Shuffle[iQIndex].sQuestion + "\"" );
             abQuestions[j] = true;
-            aNewQuestions.push( aQuestions[iQIndex] );
+            aNewQuestions.push( aQuestions2Shuffle[iQIndex] );
           }
         }
       }
@@ -321,14 +321,14 @@ function createRandomizedQuestionList(aQuestions)
 // In order to make the quiz a little more interesting,
 // shuffle the list of questions so they're not so
 // predictable when re-started:
-var aQuestions2 = createRandomizedQuestionList(a25Questions);
+var aQuestions = createRandomizedQuestionList(a25Questions);
 if ( bDebugging )
 {
   console.log( "The new shuffled question list is as follows:" );
-  var iTotalQs = aQuestions2.length;
+  var iTotalQs = aQuestions.length;
   for( var i=0; i < iTotalQs; i++ ) {
     var iQNo=i+1;
-    console.log( "Question #" + iQNo + ": " + aQuestions2[i].sQuestion );
+    console.log( "Question #" + iQNo + ": " + aQuestions[i].sQuestion );
   }
 }
 
@@ -345,13 +345,13 @@ function displayQuestion( iQuestionIndex )
 {
   function createQuestionP(iQuestionIndex)
   {
-    var sQuestionParagraph = aQuestions2[iQuestionIndex].sQuestion;
+    var sQuestionParagraph = aQuestions[iQuestionIndex].sQuestion;
     return( sQuestionParagraph );
   }
   
   function createQuestionP2(iQuestionIndex)
   {
-    var sQuestionParagraph = aQuestions2[iQuestionIndex].sQExample;
+    var sQuestionParagraph = aQuestions[iQuestionIndex].sQExample;
     sQuestionParagraph = sQuestionParagraph.trim(sQuestionParagraph);
     return( sQuestionParagraph );
   }
@@ -365,23 +365,23 @@ function displayQuestion( iQuestionIndex )
     if ( element.matches("li") )
     {
       // Correct condition 
-      if ( element.textContent === aQuestions2[iQuestionIndex].sAnswer )
+      if ( element.textContent === aQuestions[iQuestionIndex].sAnswer )
       {
         // Correct condition 
         iCorrectAnswers++;
-        // quizStatusLine.textContent = "Your answer of: [" + aQuestions2[iQuestionIndex].sAnswer + "] was correct!";
+        // quizStatusLine.textContent = "Your answer of: [" + aQuestions[iQuestionIndex].sAnswer + "] was correct!";
         quizStatusLine.textContent = "Correct!";
       } else {
         // Wrong answer: Will deduct from iSecondsLeft for wrong answers:
         iSecondsLeft = iSecondsLeft - iPenaltySeconds;
-        quizStatusLine.textContent = "Wrong! The correct answer was [" + aQuestions2[iQuestionIndex].sAnswer + "]...";
+        quizStatusLine.textContent = "Wrong! The correct answer was [" + aQuestions[iQuestionIndex].sAnswer + "]...";
       }
     }
     
     // Update the current global question number:
     iCurrentQuestion++;
 
-    if ( iCurrentQuestion >= aQuestions2.length ) {
+    if ( iCurrentQuestion >= aQuestions.length ) {
         // All done will append last page with user stats
         // quizCompleted();
         bQuizCompleted = true;
@@ -411,7 +411,7 @@ function displayQuestion( iQuestionIndex )
 
     mainForm.appendChild( elMainFormUL );
     sChoiceList = "<ul>";
-    aQuestions2[iQuestionIndex].aChoices.forEach(qChoice);
+    aQuestions[iQuestionIndex].aChoices.forEach(qChoice);
     sChoiceList += "</ul>";
 
     return( sChoiceList );
@@ -522,7 +522,7 @@ function quizCompleted()
         var recQuizResults = {
           sUserInitials: sInitials,
           iSecondsUsed: iAllottedTime-iSecondsLeft,
-          iTotalQuestions: aQuestions2.length,
+          iTotalQuestions: aQuestions.length,
           iTotalCorrect: iCorrectAnswers
         }
         
@@ -731,7 +731,7 @@ function startTimer() {
       // Stops execution of our quiz timer:
       clearInterval(timerInterval);
       quizCompleted();
-      quizStatusLine.textContent = "End of quiz! You got  " + iCorrectAnswers + " out of " + aQuestions2.length + " correct!";
+      quizStatusLine.textContent = "End of quiz! You got  " + iCorrectAnswers + " out of " + aQuestions.length + " correct!";
     }
     else if ( iSecondsLeft === 0 )
     {
@@ -750,7 +750,7 @@ startBtn.addEventListener( "click", function()
   {
     // iAllottedTime = 50;  // a5Questions:  (5*10)
     // iAllottedTime = 250; // a25Questions: (25*10)
-    iAllottedTime = aQuestions2.length*10;
+    iAllottedTime = aQuestions.length*10;
     iSecondsLeft = (iAllottedTime+1);
     //mainForm.innerHTML = "";
     clearQuizForm();
