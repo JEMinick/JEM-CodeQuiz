@@ -27,8 +27,6 @@ At the conclusion of the quiz, you will be prompted to enter your initials/name 
 ## About me:
 [Portfolio](https://jeminick.github.io/JEM-Portfolio/)
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-© 2021 JEM Services, LLC
+[License Info](./LICENSE)
